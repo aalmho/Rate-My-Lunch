@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { Grid, IconButton } from '@material-ui/core';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ThumbDownIcon from '@material-ui/icons/ThumbDown';
-import LunchStore from './stores/lunchStore';
+import LunchStore from '../stores/lunchStore';
 import { observer } from "mobx-react-lite";
 
 interface IProps {

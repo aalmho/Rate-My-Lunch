@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { TableFooter } from '@material-ui/core';
-import LunchStore from './stores/lunchStore';
+import LunchStore from '../stores/lunchStore';
 import { observer } from "mobx-react-lite";
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -10,7 +10,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper'
 import TablePagination from '@material-ui/core/TablePagination';
-import TableStore from './stores/tableStore';
+import TableStore from '../stores/tableStore';
 
 interface IProps {
   lunchStore: LunchStore;
