@@ -20,6 +20,7 @@ interface IProps {
 function LunchTable({lunchStore, tableStore}: IProps) {
 
   useEffect(() => {
+    console.log(lunchStore.getLunchData);
     tableStore.setPageForTodaysLunch();
     tableStore.changePage(Math.ceil((lunchStore.getTodaysLunch.rank / tableStore.numberOfRows) - 1 ))
   }, [lunchStore.getTodaysLunch.rank]);

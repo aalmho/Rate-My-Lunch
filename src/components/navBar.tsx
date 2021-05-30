@@ -7,6 +7,10 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import { ButtonGroup } from '@material-ui/core';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import LunchTable from './lunchList';
+import TopTable from './topTable';
+import Home from './home';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -38,22 +42,31 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
+      <Router>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton component={Link} to={"/"} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <HomeIcon/>
           </IconButton>
-          <Typography variant="h6" className={classes.title}>
+          <Typography variant="h6" className={classes.title} align="justify">
             Rate my lunch
           </Typography>
           <ButtonGroup variant="text" className={classes.navbar} color="primary" aria-label="contained primary button group">
-            <Button color="inherit">Week</Button>
-            <Button color="inherit">Month</Button>
-            <Button color="inherit">Year</Button>
-            <Button color="inherit">All time</Button>
+            <Button component={Link} to={"/week"} color="inherit">Week</Button>
+            <Button component={Link} to={"/month"} color="inherit">Month</Button>
+            <Button component={Link} to={"/year"} color="inherit">Year</Button>
+            <Button component={Link} to={"/alltime"} color="inherit">All time</Button>
           </ButtonGroup>
         </Toolbar>
       </AppBar>
+      <Switch>
+      <Route path="/" exact component={Home} />
+      <Route path="/week"  component={TopTable}/>
+      <Route path="/month"  component={TopTable}/>
+      <Route path="/year"  component={TopTable}/>
+      <Route path="/alltime"  component={TopTable}/>
+    </Switch>
+      </Router>
     </div>
   );
 }
