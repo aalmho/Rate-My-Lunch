@@ -3,10 +3,10 @@ import { makeObservable } from 'mobx';
 import {action} from 'mobx';
 import {observable} from 'mobx';
 import { computed } from 'mobx';
+import { lunch } from '../types/lunch';
 
 export default class LunchStore {
 lunchList: lunch[] = lunchData;
-
 
 get getTodaysLunch() {
     return this.lunchList.slice().sort((a,b) => b.date.getDate() - a.date.getDate())[0];
@@ -54,23 +54,14 @@ constructor () {
 }
 
 const lunchData: lunch[] = [
-    { id: 1, dish: 'Carbonara', rank: 1, likes: 65, dislikes: 2, date: new Date('June 23, 2021 23:15:30')},
-    { id: 2, dish: 'Lasagne', rank: 2, likes: 58, dislikes: 2, date: new Date('June 22, 2021 23:15:30')},
-    { id: 3, dish: 'Pasta pølser', rank: 3, likes: 44, dislikes: 3, date: new Date('June 21, 2021 23:15:30')},
-    { id: 4, dish: 'Beluga linser på pita', rank: 4, likes: 40, dislikes: 6, date: new Date('June 20, 2021 23:15:30')},
-    { id: 5, dish: 'Hotdogs', rank: 5, likes: 35, dislikes: 5, date: new Date('June 19, 2021 23:15:30')},
-    { id: 6, dish: 'Pizza', rank: 6, likes: 35, dislikes: 5, date: new Date('June 18, 2021 23:15:30')},
-    { id: 7, dish: 'test', rank: 7, likes: 35, dislikes: 5, date: new Date('June 17, 2021 23:15:30')},
-    { id: 8, dish: 'test1', rank: 8, likes: 35, dislikes: 5, date: new Date('June 16, 2021 23:15:30')},
-    { id: 9, dish: 'test2', rank: 9, likes: 35, dislikes: 5, date: new Date('June 15, 2021 23:15:30')},
-    { id: 10, dish: 'test3', rank: 10, likes: 35, dislikes: 5, date: new Date('June 14, 2021 23:15:30')},
+    { id: 1, dish: 'Carbonara', rank: 1, likes: 65, dislikes: 2, date: new Date('May 28, 2021 23:15:30')},
+    { id: 2, dish: 'Lasagne', rank: 2, likes: 58, dislikes: 2, date: new Date('May 27, 2021 23:15:30')},
+    { id: 3, dish: 'Pasta pølser', rank: 3, likes: 44, dislikes: 3, date: new Date('May 21, 2021 23:15:30')},
+    { id: 4, dish: 'Beluga linser på pita', rank: 4, likes: 40, dislikes: 6, date: new Date('May 20, 2021 23:15:30')},
+    { id: 5, dish: 'Hotdogs', rank: 5, likes: 35, dislikes: 5, date: new Date('May 19, 2021 23:15:30')},
+    { id: 6, dish: 'Pizza', rank: 6, likes: 35, dislikes: 5, date: new Date('May 18, 2021 23:15:30')},
+    { id: 7, dish: 'test', rank: 7, likes: 35, dislikes: 5, date: new Date('May 17, 2021 23:15:30')},
+    { id: 8, dish: 'test1', rank: 8, likes: 35, dislikes: 5, date: new Date('May 16, 2021 23:15:30')},
+    { id: 9, dish: 'test2', rank: 9, likes: 35, dislikes: 5, date: new Date('May 15, 2021 23:15:30')},
+    { id: 10, dish: 'test3', rank: 10, likes: 35, dislikes: 5, date: new Date('Mar 14, 2021 23:15:30')},
   ];
-
-type lunch = {
-    id: number,
-    dish: string,
-    rank: number,
-    likes: number,
-    dislikes: number,
-    date: Date,
-};

@@ -8,7 +8,6 @@ import IconButton from '@material-ui/core/IconButton';
 import { ButtonGroup } from '@material-ui/core';
 import SvgIcon, { SvgIconProps } from '@material-ui/core/SvgIcon';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-import LunchTable from './lunchList';
 import TopTable from './topTable';
 import Home from './home';
 
@@ -60,11 +59,11 @@ export default function NavBar() {
         </Toolbar>
       </AppBar>
       <Switch>
-      <Route path="/" exact component={Home} />
-      <Route path="/week"  component={TopTable}/>
-      <Route path="/month"  component={TopTable}/>
-      <Route path="/year"  component={TopTable}/>
-      <Route path="/alltime"  component={TopTable}/>
+        <Route path="/" exact component={Home} />
+        <Route path="/week"  component={TopTable}/>
+        <Route path="/month"  component={TopTable}/>
+        <Route path="/year"  component={TopTable}/>
+        <Route path="/alltime"  component={TopTable}/>
     </Switch>
       </Router>
     </div>

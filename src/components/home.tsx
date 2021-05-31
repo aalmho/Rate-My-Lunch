@@ -5,6 +5,7 @@ import LunchTable from './lunchList';
 import LunchStore from '../stores/lunchStore';
 import { makeStyles } from '@material-ui/core';
 import TableStore from '../stores/tableStore';
+
 function Home() {
 
 const useStyles = makeStyles({
